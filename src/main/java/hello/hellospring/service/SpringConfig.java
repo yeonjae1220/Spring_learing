@@ -14,7 +14,14 @@ public class SpringConfig {
     }
 
     @Bean
-    public MemberRepository memberRepository() {
+    public MemberRepository memberRepository()
+    {
+        return getMemberRepository();
+        // return new JdbcMemberRepository();
+
+    }
+
+    private static MemoryMemberRepository getMemberRepository() {
         return new MemoryMemberRepository();
     }
 
